@@ -2,4 +2,4 @@
 
 python ingredients.py > recipie.txt
 
-clisp lisp/recipe-to-sexpr.lisp recipie.txt
+clisp lisp/recipe-to-sexpr.lisp recipie.txt | clisp lisp/define-ca-number-concepts.lisp > lisp/ca-number-concepts.lisp
