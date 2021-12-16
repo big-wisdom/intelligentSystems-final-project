@@ -4,4 +4,5 @@ python ingredients.py > recipe.txt
 
 clisp lisp/recipe-to-sexpr.lisp recipe.txt | clisp lisp/define-ca-number-concepts.lisp > lisp/ca-number-concepts.lisp
 
+clisp lisp/recipe-to-sexpr.lisp recipe.txt
 clisp lisp/recipe-to-sexpr.lisp recipe.txt | clisp lisp/do_ca.lisp
