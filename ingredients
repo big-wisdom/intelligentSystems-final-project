@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+python ingredients.py > recipie.txt
+
+clisp lisp/recipe-to-sexpr.lisp recipie.txt
