@@ -11,10 +11,24 @@ Description: Some word definitions for CA
 (in-package :user)
 
 (define-ca-word
+  roast
+  (concept nil (roast)))
+
+(define-ca-word
+  <or>
+  (concept ?or (or))
+  (request (test (before ?or ?first (food)))
+           (actions (modify ?or :first ?first)))
+  (request (test (after ?or ?second (food)))
+           (actions (modify ?or :second ?second))))
+
+(define-ca-word
   <ing>
   (concept ?ing (ingredient))
   (request (test (after ?ing ?quant (quantity)))
-           (actions (modify ?ing :quantity ?quant))))
+           (actions (modify ?ing :quantity ?quant)))
+  (request (test (after ?ing ?type (or)))
+           (actions (modify ?ing :type ?type))))
 
 (define-ca-word
   <hyphen>

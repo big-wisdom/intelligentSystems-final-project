@@ -36,6 +36,7 @@ bugs to vladimir kulyukin in canvas
     (quantity concept)
     (ingredient concept)
     (range concept)
+    (roast food phys-obj meat)
     ))
 
 (ca-erase-lexicon)
