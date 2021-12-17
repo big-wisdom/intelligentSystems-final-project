@@ -54,10 +54,10 @@ bugs to vladimir kulyukin via canvas
 (define-ca-word
   pounds
   (concept ?quant (quantity :unit (pound)))
-;  (request (test (before ?quant ?num (number)))
-;	   (actions (modify ?quant :measure ?num)))
   (request (test (before ?quant ?range (range)))
-           (actions (modify ?quant :measure ?range))))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
 
 
 
