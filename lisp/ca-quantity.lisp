@@ -15,43 +15,43 @@ bugs to vladimir kulyukin via canvas
 
 (define-ca-word
   g
-  (concept ?quant (quanity :unit (gram)))
+  (concept ?quant (quantity :unit (gram)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
   
 (define-ca-word
   ml
-  (concept ?quant (quanity :unit (milliliter)))
+  (concept ?quant (quantity :unit (milliliter)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
 (define-ca-word
   cm
-  (concept ?quant (quanity :unit (centimeter)))
+  (concept ?quant (quantity :unit (centimeter)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
 (define-ca-word
   inch
-  (concept ?quant (quanity :unit (inch)))
+  (concept ?quant (quantity :unit (inch)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
 (define-ca-word
   inches
-  (concept ?quant (quanity :unit (inch)))
+  (concept ?quant (quantity :unit (inch)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
 (define-ca-word
   pound
-  (concept ?quant (quanity :unit (pound)))
+  (concept ?quant (quantity :unit (pound)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
 (define-ca-word
   pounds
-  (concept ?quant (quanity :unit (pound)))
+  (concept ?quant (quantity :unit (pound)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
