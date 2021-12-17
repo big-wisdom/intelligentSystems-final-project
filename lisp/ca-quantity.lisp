@@ -75,9 +75,22 @@ bugs to vladimir kulyukin via canvas
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
+(define-ca-word
+  onions
+  (concept nil (onion))
+  (concept ?quant (quantity :unit (onion)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
 
-
-
+(define-ca-word
+  cup
+  (concept ?quant (quantity :unit (cup)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
   
   
 

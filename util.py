@@ -9,7 +9,7 @@ def clean_strings_ingredients(text: str) -> str:
     # text = text.replace('(', '\\(')
     # text = text.replace(')', '\\)')
     # text = text.replace(',', '\\,')
-    # text = text.replace('-', '\\-')
+    text = text.replace(' - ', ' <hyphen> ')
 
     # remove unnecessary whitespace
     text = text.strip()

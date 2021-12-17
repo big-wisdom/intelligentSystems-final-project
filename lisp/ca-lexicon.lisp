@@ -38,8 +38,13 @@ bugs to vladimir kulyukin in canvas
     (ingredient concept)
     (range concept)
     (roast food phys-obj meat)
+    (chicken food phys-obj meat)
+    (chicken-stock food)
+    (stock food)
     (garlic food phys-obj)
     (minced quality)
+    (small quality)
+    (onion food phys-obj)
     ))
 
 (ca-erase-lexicon)

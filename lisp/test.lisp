@@ -10,4 +10,6 @@
 (INGREDIENT :QUANTITY (QUANTITY
                         :MEASURE (NUMBER :SYMBOL (4))
                         :UNIT (CLOVE))
-            :TYPE (CLOVE))
+            :TYPE (CLOVE)
+            :QUALITY (minced))
+

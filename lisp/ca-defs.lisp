@@ -15,6 +15,18 @@ Description: Some word definitions for CA
   (concept nil (roast)))
 
 (define-ca-word
+  chicken
+  (concept nil (chicken)))
+
+(define-ca-word
+  stock
+  (concept ?stock (stock))
+  ; get ingredient, check for chicken, replace chicken with chicken-stock
+  (request (test (before ?stock ?ing (ingredient)))
+           (actions (request (test (before ?stock ?chick (chicken)))
+                             (actions (modify ?ing :type (chicken-stock)))))))
+
+(define-ca-word
   garlic
   (concept nil (garlic)))
 
@@ -30,6 +42,10 @@ Description: Some word definitions for CA
   (concept nil (minced)))
 
 (define-ca-word
+  small
+  (concept nil (small)))
+
+(define-ca-word
   <or>
   (concept ?or (or))
   (request (test (before ?or ?first (food)))
@@ -43,7 +59,11 @@ Description: Some word definitions for CA
   (request (test (after ?ing ?quant (quantity)))
            (actions (modify ?ing :quantity ?quant)))
   (request (test (after ?ing ?type (or)))
-           (actions (modify ?ing :type ?type))))
+           (actions (modify ?ing :type ?type)))
+  (request (test (after ?ing ?type (food)))
+           (actions (modify ?ing :type ?type)))
+  (request (test (after ?ing ?quality (quality)))
+           (actions (modify ?ing :quality ?quality))))
 
 
 (define-ca-word
