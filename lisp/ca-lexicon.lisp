@@ -34,9 +34,12 @@ bugs to vladimir kulyukin in canvas
     (kite phys-obj)
     (number concept)
     (quantity concept)
+    (quality concept)
     (ingredient concept)
     (range concept)
     (roast food phys-obj meat)
+    (garlic food phys-obj)
+    (minced quality)
     ))
 
 (ca-erase-lexicon)

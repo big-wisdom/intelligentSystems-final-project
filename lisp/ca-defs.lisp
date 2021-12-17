@@ -15,6 +15,21 @@ Description: Some word definitions for CA
   (concept nil (roast)))
 
 (define-ca-word
+  garlic
+  (concept nil (garlic)))
+
+(define-ca-word
+  <comma>
+  (concept ?comma (quality))
+  (request (test (before ?comma ?ing (ingredient))))
+  (request (test (after ?comma ?quality (quality)))
+           (actions (modify ?ing :quality ?quality))))
+
+(define-ca-word
+  minced
+  (concept nil (minced)))
+
+(define-ca-word
   <or>
   (concept ?or (or))
   (request (test (before ?or ?first (food)))
@@ -29,6 +44,7 @@ Description: Some word definitions for CA
            (actions (modify ?ing :quantity ?quant)))
   (request (test (after ?ing ?type (or)))
            (actions (modify ?ing :type ?type))))
+
 
 (define-ca-word
   <hyphen>

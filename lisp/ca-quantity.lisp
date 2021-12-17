@@ -59,7 +59,21 @@ bugs to vladimir kulyukin via canvas
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
 
+(define-ca-word
+  cloves 
+  (concept ?quant (quantity :unit (clove)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
 
+(define-ca-word
+  clove 
+  (concept ?quant (quantity :unit (clove)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
 
 
 

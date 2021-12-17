@@ -24,26 +24,26 @@ bugs to vladimir kulyukin in canvas.
 
 (setf *ca-tracing* nil)
 
-;(loop for line = (read-line *standard-input*)
-;      while line
-;      do (multiple-value-bind
-;        (s-expr num-chars)
-;        (read-from-string line)
-;        (multiple-value-bind
-;          (c-list r-list)
-;          (ca s-expr)
-;          (format *standard-output* "~S~\%" c-list))
-;        )
-;      )
-(let ((inln (read-line *standard-input*)))
-
-  (multiple-value-bind
-   (s-expr num-chars)
-   (read-from-string inln)
-   (multiple-value-bind
-    (c-list r-list)
-    (ca s-expr)
-    (format *standard-output* "~S~\%" c-list))
-   )
-  )
+(loop for line = (read-line *standard-input*)
+      while line
+      do (multiple-value-bind
+        (s-expr num-chars)
+        (read-from-string line)
+        (multiple-value-bind
+          (c-list r-list)
+          (ca s-expr)
+          (format *standard-output* "~S~\%" (last c-list)))
+        )
+      )
+;(let ((inln (read-line *standard-input*)))
+;
+;  (multiple-value-bind
+;   (s-expr num-chars)
+;   (read-from-string inln)
+;   (multiple-value-bind
+;    (c-list r-list)
+;    (ca s-expr)
+;    (format *standard-output* "~S~\%" (last c-list)))
+;   )
+;  )
 
