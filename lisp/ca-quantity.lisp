@@ -85,12 +85,63 @@ bugs to vladimir kulyukin via canvas
 	   (actions (modify ?quant :measure ?num))))
 
 (define-ca-word
+  bay 
+  (concept nil (bay))
+  (concept ?quant (quantity :unit (bay)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
+
+(define-ca-word
+  mushrooms
+  (concept snil (mushroom))
+  (concept ?quant (quantity :unit (mushroom)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
+
+(define-ca-word
+  potatoes
+  (concept snil (potato))
+  (concept ?quant (quantity :unit (potato)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
+
+(define-ca-word
+  carrots
+  (concept snil (carrot))
+  (concept ?quant (quantity :unit (carrot)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
+
+(define-ca-word
   cup
   (concept ?quant (quantity :unit (cup)))
   (request (test (before ?quant ?range (range)))
            (actions (modify ?quant :measure ?range)))
   (request (test (before ?quant ?num (number)))
 	   (actions (modify ?quant :measure ?num))))
+
+(define-ca-word
+  tablespoon
+  (concept ?quant (quantity :unit (tablespoon)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
   
+(define-ca-word
+  pinch
+  (concept ?quant (quantity :unit (pinch)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range)))
+  (request (test (before ?quant ?num (number)))
+	   (actions (modify ?quant :measure ?num))))
   
 

@@ -10,6 +10,7 @@ def clean_strings_ingredients(text: str) -> str:
     # text = text.replace(')', '\\)')
     # text = text.replace(',', '\\,')
     text = text.replace(' - ', ' <hyphen> ')
+    text = text.replace(' or ', ' <or> ')
 
     # remove unnecessary whitespace
     text = text.strip()

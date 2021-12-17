@@ -19,16 +19,76 @@ Description: Some word definitions for CA
   (concept nil (chicken)))
 
 (define-ca-word
+  beef
+  (concept ?beef (beef))
+  (request (test (after ?beef ?stock (stock)))
+           (actions (remove ?stock)
+                    (remove ?beef)
+                    (concept nil (beef-stock)))))
+
+(define-ca-word
+  soy
+  (concept nil (soy)))
+
+(define-ca-word
+  fish
+  (concept nil (fish)))
+
+(define-ca-word
+  olive
+  (concept nil (olive)))
+
+(define-ca-word
+  rosemary
+  (concept nil (rosemary)))
+
+(define-ca-word
+  thyme
+  (concept nil (thyme)))
+
+(define-ca-word
+  salt
+  (concept nil (salt)))
+
+(define-ca-word
+  pepper
+  (concept nil (pepper)))
+
+(define-ca-word
+  wine
+  (concept nil (wine)))
+
+(define-ca-word
+  vinegar
+  (concept nil (vinegar)))
+
+(define-ca-word
   stock
   (concept ?stock (stock))
+  (request (test (before ?stock ?chick (chicken)))
+           (actions (remove ?chick)
+                    (remove ?stock)
+                    (concept nil (chicken-stock))))
+  (request (test (before ?stock ?beef (beef)))
+           (actions (remove ?beef)
+                    (remove ?stock)
+                    (concept nil (beef-stock)))))
+; okay I need to look for chicken and beef and remove both them and the stock if I find them
+; then add chicken-stock or beef-stock respectively
   ; get ingredient, check for chicken, replace chicken with chicken-stock
-  (request (test (before ?stock ?ing (ingredient)))
-           (actions (request (test (before ?stock ?chick (chicken)))
-                             (actions (modify ?ing :type (chicken-stock)))))))
+  ;(request (test (before ?stock ?ing (ingredient)))
+  ;         (actions (request (test (before ?stock ?chick (chicken)))
+  ;                           (actions (modify ?ing :type (chicken-stock))))
+  ;                  (request (test (before ?stock ?beef (beef)))
+  ;                           (actions (modify ?ing :type (beef-stock)))))))
 
 (define-ca-word
   garlic
   (concept nil (garlic)))
+
+(define-ca-word
+  cornstarch
+  (concept nil (cornstarch)))
 
 (define-ca-word
   <comma>
@@ -40,6 +100,18 @@ Description: Some word definitions for CA
 (define-ca-word
   minced
   (concept nil (minced)))
+
+(define-ca-word
+  sliced
+  (concept nil (sliced)))
+
+(define-ca-word
+  chopped
+  (concept nil (chopped)))
+
+(define-ca-word
+  quartered
+  (concept nil (quartered)))
 
 (define-ca-word
   small
@@ -54,11 +126,21 @@ Description: Some word definitions for CA
            (actions (modify ?or :second ?second))))
 
 (define-ca-word
+  and
+  (concept ?and (and))
+  (request (test (before ?and ?first (food)))
+           (actions (modify ?and :first ?first)))
+  (request (test (after ?and ?second (food)))
+           (actions (modify ?and :second ?second))))
+
+(define-ca-word
   <ing>
   (concept ?ing (ingredient))
   (request (test (after ?ing ?quant (quantity)))
            (actions (modify ?ing :quantity ?quant)))
   (request (test (after ?ing ?type (or)))
+           (actions (modify ?ing :type ?type)))
+  (request (test (after ?ing ?type (and)))
            (actions (modify ?ing :type ?type)))
   (request (test (after ?ing ?type (food)))
            (actions (modify ?ing :type ?type)))
