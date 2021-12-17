@@ -32,10 +32,9 @@ bugs to vladimir kulyukin in canvas
     (city location)
     (store location)
     (kite phys-obj)
-    (pounds unit plural)
-    (pount unit singulars)
-    (roast food phys-obj meat)
-    ([0-9] quantity)
+    (number concept)
+    (quantity concept)
+    (ingredient concept)
     ))
 
 (ca-erase-lexicon)

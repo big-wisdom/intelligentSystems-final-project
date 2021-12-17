@@ -11,15 +11,10 @@ Description: Some word definitions for CA
 (in-package :user)
 
 (define-ca-word
-    "[0-9]"
-    (concept ?number (1)))
-
-(define-ca-word
-    pounds
-    (concept ?unit (pounds))
-    (request (test (before ?unit ?quantity (quantity)))
-             (actions (modify ?unit :quantity ?quantity)))
-    )
+  <ing>
+  (concept ?ing (ingredient))
+  (request (test (after ?ing ?quant (quantity)))
+           (actions (modify ?ing :quan ?quant))))
 
 (define-ca-word 
     jack

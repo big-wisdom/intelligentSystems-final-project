@@ -8,7 +8,7 @@ def main():
         soup = BeautifulSoup(contents, "html.parser")
         ingredients = soup.find_all("li", class_="wprm-recipe-ingredient")
         for ingredient in ingredients:
-            print(clean_strings(ingredient.text))
+            print(clean_strings_ingredients(ingredient.text))
             #print(ingredient.text)
 
 

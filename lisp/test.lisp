@@ -1,6 +1,8 @@
-(write-line "Here's a list literal")
-(write '(+ 3 5))
-
-(write-line "")
-(write-line "Here's an evaluated list")
-(write (+ 3 5))
+(INGREDIENT :QUANTITY (QUANTITY 
+                        :MEASURE (RANGE 
+                                   :START (1) 
+                                   :END (3)) 
+                        :UNIT (POUND)) 
+            :TYPE (OR 
+                    :FIRST (USDA CHOICE GRADE CHUCK ROAST) 
+                    :SECOND (CANADA AAA GRADE BLADE ROAST))
