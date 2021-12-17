@@ -17,7 +17,9 @@ bugs to vladimir kulyukin via canvas
   g
   (concept ?quant (quantity :unit (gram)))
   (request (test (before ?quant ?num (number)))
-	   (actions (modify ?quant :measure ?num))))
+	   (actions (modify ?quant :measure ?num)))
+  (request (test (after ?quant ?range (range)))
+           (actions (modify ?quant :quantity ?range))))
   
 (define-ca-word
   ml
@@ -52,8 +54,10 @@ bugs to vladimir kulyukin via canvas
 (define-ca-word
   pounds
   (concept ?quant (quantity :unit (pound)))
-  (request (test (before ?quant ?num (number)))
-	   (actions (modify ?quant :measure ?num))))
+;  (request (test (before ?quant ?num (number)))
+;	   (actions (modify ?quant :measure ?num)))
+  (request (test (before ?quant ?range (range)))
+           (actions (modify ?quant :measure ?range))))
 
 
 

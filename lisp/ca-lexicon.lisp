@@ -35,6 +35,7 @@ bugs to vladimir kulyukin in canvas
     (number concept)
     (quantity concept)
     (ingredient concept)
+    (range concept)
     ))
 
 (ca-erase-lexicon)

@@ -14,7 +14,15 @@ Description: Some word definitions for CA
   <ing>
   (concept ?ing (ingredient))
   (request (test (after ?ing ?quant (quantity)))
-           (actions (modify ?ing :quan ?quant))))
+           (actions (modify ?ing :quantity ?quant))))
+
+(define-ca-word
+  <hyphen>
+  (concept ?range (range))
+  (request (test (before ?range ?num (number)))
+           (actions (modify ?range :start ?num)))
+  (request (test (after ?range ?num (number)))
+           (actions (modify ?range :end ?num))))
 
 (define-ca-word 
     jack
